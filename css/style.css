@@ -1,0 +1,228 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap');
+
+:root {
+    /* Brand Colors */
+    --primary-color: #18894E;
+    --primary-dark: #12663a;
+    --primary-light: #2ecc71;
+    --accent-color: #f39c12; /* A complementary orange/gold for calls to action */
+    
+    /* Neutral Colors */
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --bg-dark: #111827;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Transitions */
+    --transition-base: all 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: var(--shadow-md);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: var(--transition-base);
+}
+
+.navbar-brand img {
+    transition: var(--transition-base);
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg-white);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section / Section Styling */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Cards & Content Containers */
+.card-custom {
+    background: var(--bg-white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    transition: var(--transition-base);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Carousel Customization */
+.carousel-item img {
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+    height: 400px; /* Fixed height for consistency */
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+/* Accordion Customization */
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem !important;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--bg-white);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--bg-white);
+    background-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(24, 137, 78, 0.25);
+}
+
+/* Buttons */
+.btn {
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-success {
+    background-color: #25D366;
+    border-color: #25D366;
+}
+
+.btn-primary {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border: none;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+}
+
+/* Floating Button */
+.floating-btn {
+    transition: var(--transition-base);
+}
+.floating-btn:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    .display-6 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Utility for decorative backgrounds */
+.bg-pattern {
+    background-image: radial-gradient(var(--primary-color) 0.5px, transparent 0.5px), radial-gradient(var(--primary-color) 0.5px, var(--bg-light) 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.05;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
